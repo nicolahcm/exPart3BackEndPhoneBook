@@ -38,6 +38,8 @@ morgan.token('show-post-body', function (req, res) {
 app.use(morgan(':show-post-body :method :url :status :res[content-length] - :response-time ms'))
 
 
+app.use(express.static("build"))
+
 app.get("/api/persons", (req, res) => {
     res.json(persons)
 })
